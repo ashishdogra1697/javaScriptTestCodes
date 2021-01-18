@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" onsubmit="return(validate(myForm));">
+        <input type="text" name="firstname"><br>
+        <input type="checkbox" id="checkme"><br>
+        <button type="Submit">Submit</button>
+    </form>
+
+    <script>
+        function validate(){
+            if(document.myForm.firstname.value==""){
+                alert("Enter a valid name");
+                document.myForm.firstname.focus();
+                return false;
+            }
+           var x = document.getElementById("checkme").checked;
+           if(x === false){
+               alert("Chexk this box");
+           }
+        }
+    </script>
+</body>
+</html>

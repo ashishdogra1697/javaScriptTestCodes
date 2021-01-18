@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>the ajax request</h1>
+    <button type="button" onclick="loadDoc()">Request data</button>
+    <p id="demo"></p>
+
+    <script>
+        function loadDoc(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange=function(){
+                if(this.readyState==4 && this.status== 200){
+                    document.getElementById("demo").innerHTML=this.responseText;
+                }
+            };
+            xhttp.open("GET","https://www.iana.org/domains/reserved", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>
